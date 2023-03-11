@@ -23,7 +23,10 @@ body {
 
 .mems__text {
   color: var(--text-color);
-  transition: color 500ms linear;
+}
+
+.mems__label {
+  cursor: pointer;
 }
 
 .mems__item {
@@ -43,49 +46,62 @@ body {
   opacity: 0;
   width: 0.8rem;
   height: 0.8rem;
-  transition: transform 200ms linear, opacity 500ms linear;
-  /* transition: opacity 2000ms linear; */
+  transition: transform 100ms linear, opacity 500ms linear;
 }
 
 .mems__image {
-  display: none;
-  margin: 0 auto;
+  width: 0rem;
+  margin: 0rem auto;
   border-radius: 0.4rem;
+  transition: width 300ms linear;
 }
 
 .mems__radio {
   display: none;
 }
 
+.mems__radio:checked ~ .mems__image {
+  width: 18rem;
+}
+
+.mems__radio:checked ~ .text-wrapper .mems__text {
+  color: black;
+}
+
 @media (hover: hover) {
   .mems:hover > .mems__item .mems__icon--plus {
     opacity: 1;
+    cursor: pointer;
+  }
+
+  .mems:hover
+    > .mems__item
+    .mems__radio:checked
+    ~ .text-wrapper
+    > .mems__icon--plus {
+    transform: rotate(45deg);
   }
 
   .mems:hover > .mems__item .mems__text {
     color: var(--accent-text-color);
   }
+
   .mems__label:hover > .mems__image {
-    display: block;
+    width: 18rem;
   }
 
   .mems__label:hover > .text-wrapper .mems__icon--plus {
-    opacity: 1;
     transform: rotate(45deg);
+    cursor: pointer;
   }
 }
 
-.mems__radio:checked ~ .mems__image {
-  display: block;
+.mems__label:active > .text-wrapper .mems__text {
+  color: var(--text-color);
 }
 
-.mems__radio:checked ~ .text-wrapper .mems__icon--plus {
-  opacity: 1;
-  transform: rotate(45deg);
-}
-
-.mems__radio:checked ~ .text-wrapper .mems__text {
-  color: black;
+.mems__label:active > .text-wrapper .mems__icon--plus {
+  fill: var(--text-color);
 }
 
 @media screen and (min-width: 320px) and (max-width: 819px) {
