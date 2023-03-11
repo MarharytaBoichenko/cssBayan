@@ -1,0 +1,89 @@
+:root {
+  --main-font: "Merriweather", serif;
+  --text-color: #030407;
+  /* --main-font-size: 1.5rem; */
+  --bcg-color: rgb(237, 228, 106);
+}
+
+body {
+  background-color: var(--bcg-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 100%;
+  padding: 2rem;
+}
+
+/* .mems:hover > .mems__item .mems__icon--plus {
+  opacity: 1;
+}
+
+.mems:hover > .mems__item .mems__text {
+  color: black;
+} */
+
+.mems__item {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 0.1rem solid grey;
+  color: blue;
+}
+
+.text-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.6rem;
+}
+
+.mems__icon {
+  opacity: 0;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.mems__image {
+  /* opacity: 0; */
+  display: none;
+  border-radius: 0.4rem;
+}
+
+.mems__radio {
+  display: none;
+}
+
+@media (hover: hover) {
+  .mems:hover > .mems__item .mems__icon--plus {
+    opacity: 1;
+  }
+
+  .mems:hover > .mems__item .mems__text {
+    color: black;
+  }
+  .mems__label:hover > .mems__image {
+    display: block;
+  }
+  .mems__label:hover > .text-wrapper .mems__icon--cross {
+    opacity: 1;
+  }
+  .mems__label:hover > .text-wrapper .mems__icon--plus {
+    opacity: 0;
+  }
+}
+
+.mems__radio:checked ~ .mems__image {
+  display: block;
+}
+
+.mems__radio:checked ~ .text-wrapper .mems__icon--cross {
+  opacity: 1;
+}
+
+.mems__radio:checked ~ .text-wrapper .mems__icon--plus {
+  opacity: 0;
+}
+
+.mems__radio:checked ~ .text-wrapper .mems__text {
+  color: black;
+}
