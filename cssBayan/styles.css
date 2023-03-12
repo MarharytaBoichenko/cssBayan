@@ -22,6 +22,7 @@ body {
 }
 
 .mems__text {
+  display: block;
   color: var(--text-color);
 }
 
