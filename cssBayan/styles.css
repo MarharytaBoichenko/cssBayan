@@ -46,7 +46,7 @@ body {
   opacity: 0;
   width: 0.8rem;
   height: 0.8rem;
-  transition: transform 100ms linear, opacity 500ms linear;
+  transition: transform 100ms linear, opacity 300ms linear;
 }
 
 .mems__image {
@@ -94,6 +94,10 @@ body {
     transform: rotate(45deg);
     cursor: pointer;
   }
+
+  .mems__label:active {
+    opacity: 0.8;
+  }
 }
 
 .mems__label:active > .text-wrapper .mems__text {
@@ -126,6 +130,10 @@ body {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
   }
+
+  .mems__radio:checked ~ .mems__image {
+    width: 20rem;
+  }
 }
 
 @media screen and (min-width: 1920px) {
@@ -148,5 +156,9 @@ body {
   .mems__item {
     padding-top: 1.8rem;
     padding-bottom: 1.8rem;
+  }
+
+  .mems__radio:checked ~ .mems__image {
+    width: 25rem;
   }
 }
